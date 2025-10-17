@@ -1,0 +1,9 @@
+#!/bin/bash
+message=("veut-tu crée ce dossier ?" "tu es sûr ?" "vraimment ???" "Si tu veux crée ce fichier tape 'yes'")
+random_index=$((RANDOM % ${#messages[@]}))
+echo "${messages[$random_index]}"
+while [ "$reponse" != "yes" ]; do
+  random_index=$((RANDOM % ${#messages[@]}))
+  read -p "${messages[$random_index]} (yes/no): " reponse
+done
+
